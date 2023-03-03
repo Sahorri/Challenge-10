@@ -1,0 +1,117 @@
+/** CSS RESETS **/
+
+/* 1. Reset margin/padding + Border-Box Model */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 2. Améliorer le rendu du texte */
+body {
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 3. Améliorer les média par défaut car (img = par défaut inline) => Responsive */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+}
+
+/* 4. Supprimer le style de typo de base */
+input, button, textarea, select {
+    font: inherit;
+}
+
+/* 5. Eviter l'overflow des textes même avec des petites viewport */
+p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+/** CSS GENERAL **/
+
+html {
+	font-size: 62.5%;  /* 1rem = 10px */
+    font-family:'Kumbh Sans', sans-serif;
+}
+
+body { /* Centrer la carte */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(185, 75%, 39%);
+    background-image: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-position-x: -6rem, 86rem;
+    background-position-y: -40rem, 50rem;
+}
+
+main {
+    width: 350px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-top: -3.5rem;
+}
+
+p {
+    text-align: center;
+    font-size: 1.5rem;
+    color:hsl(227, 10%, 46%);
+    margin-bottom: 2rem;
+}
+
+.age {
+    color:hsl(227, 10%, 46%);
+    font-weight: 400;
+    padding-left: 1rem;
+}
+
+svg {
+    border-radius: 10px 10px 0 0;
+}
+
+/** CSS IMAGES **/
+
+.img-card {
+    border-radius: 50px;
+    border: 5px solid white;
+    margin: auto; /* pour centrer l'image */
+    position: relative; /* pour déplacer l'image vers le haut, au dessus du svg */
+    top: -50px;
+}
+
+/** CSS STATS **/
+
+.bold {
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.gray {
+    color:hsl(227, 10%, 46%);
+    letter-spacing: 0.2rem;
+}
+
+.stats {
+    list-style: none;
+    border-top: 0.5px solid hsl(0, 0%, 76%);
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    text-align: center;
+    margin: 2rem 3rem;
+}
+
+.block {
+    display: block;
+}
