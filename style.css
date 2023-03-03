@@ -43,11 +43,6 @@ body { /* Centrer la carte */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: hsl(185, 75%, 39%);
-    background-image: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
-    background-repeat: no-repeat, no-repeat;
-    background-position-x: -6rem, 86rem;
-    background-position-y: -40rem, 50rem;
 }
 
 main {
@@ -76,6 +71,36 @@ p {
 
 svg {
     border-radius: 10px 10px 0 0;
+}
+
+/** VERSION 2 : BACKGROUND EFFECT **/
+
+body { /* créer un background en position relative qui va permettre d'utiliser le z-index */
+    position: relative; 
+    background: hsl(185, 75%, 39%);
+    z-index: -1; 
+}
+
+body::before, body::after {
+    position: absolute; /* sort du flux de la page */
+    content: ''; /* pas de contenu */
+    width: 100vw; /* donne une taille */
+    height: 100vh; /* donne une taille */
+    background-size: auto;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* placer derrière le texte */
+}
+
+body::before {
+    top: 0; /* position haut gauche */
+    left: 0;
+    background: url("images/bg-pattern-top.svg") no-repeat bottom right;
+}
+
+body::after {
+    top: 100%; /* position bas gauche */
+    left: 100%;
+    background: url("images/bg-pattern-bottom.svg") no-repeat top left;
 }
 
 /** CSS IMAGES **/
